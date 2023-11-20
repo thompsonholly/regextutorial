@@ -1,10 +1,20 @@
 # Regex Tutorial
 
-Introductory paragraph (replace this with your text)
+This is a tutorial about Regular expressions, or regex for short. Regex is a very useful programming tool that helps developers to solve problems. A regular expression is a pattern of one or more character literals, operators, or constructs. It helps developers do things like find and replace text, verify that input data follows the format required, and and other similar things.
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+This tutorial of regex will explain the matching an HTML Tag regex. This will also explain the different components that make up a regex and how each one is used in this particular expression.
+
+* Matching an HTML Tag: `/^<([a-z]+)([^<]+)*(?:>(.*)<\/\1>|\s+\/>)$/`
+
+AN HTML tag contains < and > as an opening and closing "tag". An example of an HTML as viewed in source code for a webpage is: <HTML>, <main>, <div>, and so forth.
+
+A closing tag must follow an opening tag in order to contain the code within it. If not it will not be properly run. HTML tags are not always quite as simple as the prior example and can include various specific parts through which, when run, can deploy unique tasks. Consider the following:
+
+(MDN RegEx)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp]
+
+
 
 ## Table of Contents
 
@@ -37,4 +47,5 @@ Briefly summarize the regex you will be describing and what you will explain. In
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+Holly Thompson is currently a full-time student in the EdEx Full Stack Coding Bootcamp at the University of Minnesota, she is the author of this Regex Tutorial. Link to GitHub profile: https://github.com/thompsonholly
+
