@@ -103,3 +103,7 @@ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expression
 
 Holly Thompson is currently a full-time student in the edX Full-Stack Coding Bootcamp at the University of Minnesota, she is the author of this Regex Tutorial. Link to GitHub profile: https://github.com/thompsonholly
 
+## Link
+GitHub Gist Link: https://gist.github.com/thompsonholly
+
+ 
