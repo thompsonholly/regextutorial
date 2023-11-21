@@ -30,17 +30,34 @@ A closing tag must follow an opening tag in order to contain the code within it.
 ## Regex Components
 
 ### Anchors
-The characters ^ and $ are where to define the search parameters. Anything after ^ (caret) and before $ (dollar) are part of the search. 
+The characters `^` and `$` are where to define the search parameters. Anything after `^` (caret) and before `$` (dollar) are part of the search. 
 
-^abc123$
+`^abc123$`
 
-The caret, ^, identifies the beginning of our string the position. The dollar, $, it identifies the end of our search string.
+The caret, `^`, identifies the beginning of our string the position. The dollar, `$`, it identifies the end of our search string.
 
-The anchors help the system running the search parameter to identify < and > characters with anything listed between as an alpha-numeric or special character combination.
+The anchors help the system running the search parameter to identify `<` and `>` characters with anything listed between as an alpha-numeric or special character combination.
 
 
 ### Quantifiers
+Quantifiers in regex are used to determind where the preceding string must be matched a pre-set number of times or more. A quantifier can be labeled as being greedy or lazy.
 
+The `+` quantifier states that the search must match one or more of the characters set in the algorithm, characters placed to the left of the + are expected to match at least once
+example: A+; the quantifier + is applied for a search for A
+example: apples+ the quantifier + is ONLY applied to the s in apples rather than the entire word
+*
+
+this quantifier maintains that the search must match 0 or more times
+?
+
+this quantifier maintains that the search must match 0 or 1 times; it is considered optional
+when implemented, it makes the preceding quantifier lazy, permitting it to match as few times as possible; whereas by default with our algorithm, quantifiers tend to gravitate towards matching as many characters as possible and are considered greedy as a result
+{7,9}
+
+the algorithm is set to force characters between seven and nine characters long
+abc|cba
+
+results in a match of abc OR cba only
 ### Grouping Constructs
 
 ### Bracket Expressions
