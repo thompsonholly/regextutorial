@@ -12,6 +12,10 @@ AN HTML tag contains < and > as an opening and closing "tag". An example of an H
 
 A closing tag must follow an opening tag in order to contain the code within it. If not it will not be properly run. HTML tags are not always quite as simple as the prior example and can include various specific parts through which, when run, can deploy unique tasks. Consider the following:
 
+<a href="http://www.petfinder.com" title="petfinder" target="_blank">
+
+We first identify the link as http://www.petfinder.com with the title displaying on mouse hover as petfinder and with target="_blank", which means when a user clicks on the link it will open in a new blank window/tab depending on user's browser settings. HTML tags can include alpha-numeric and special characters, a regex string-search will include the range of available characters.
+
 (MDN RegEx)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp]
 
 
@@ -29,6 +33,7 @@ A closing tag must follow an opening tag in order to contain the code within it.
 ## Regex Components
 
 ### Anchors
+
 The characters `^` and `$` are where to define the search parameters. Anything after `^` (caret) and before `$` (dollar) are part of the search. 
 
 `^abc123$`
@@ -39,6 +44,7 @@ The anchors help the system running the search parameter to identify `<` and `>`
 
 
 ### Quantifiers
+
 Quantifiers in regex are used to determind where the preceding string must be matched a pre-set number of times or more. A quantifier can be labeled as being greedy or lazy.
 
 The `+` quantifier states that the search must match one or more of the characters set in the algorithm, characters placed to the left of the `+ are expected to match at least once:
@@ -56,14 +62,17 @@ When it is implemented this `?` makes the quantifier before it considered lazy. 
 `abc|cba` This results in a match of `abc` OR `cba` only.
 
 ### Grouping Constructs
+
 `(hijk){4}` If it a selective pattern, they are set between parentheses and include a numeric counter besides it. This example would search for the match of `abcabcabc` because the first group was denoted as `(hij)` and we included the need for it to repeat three times as `{4}`.
 
 If there is non parentheses groups, the regex would look similarly `(?:hijk){4}` or `(?:HIJK`.
 
 ### Bracket Expressions
+
 A regex captured in square brackets is meant to match a single character or collating element.  An example is `[a-z]` as a bracket expression.
 
 ### The OR Operator
+
 The `|` operator acts like a Boolean OR. It matches the expression before or after the `|` and can be utilized inside a group or in  a whole expression. It causes the search-string to seek a match of either what is before or follows the `|`. 
 In the example: `<hijk>|<kjih>` it is looking for either `<hijk>` or `<kjih>`.
 
@@ -80,7 +89,17 @@ The `s` searches for whitespace characters within a string.
 
 ### Character Escapes
 
+The `\` escapes a character that otherwise would be interpreted literally. Important to note that all special characters, including the backslash `\`, lose special significance inside bracket expressions.
+
+## Resources
+
+Please review the following resources to increase knowledge of regex:
+
+https://eloquentjavascript.net/09_regexp.html 
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Regular_Expressions 
+
+
 ## Author
 
-Holly Thompson is currently a full-time student in the EdEx Full Stack Coding Bootcamp at the University of Minnesota, she is the author of this Regex Tutorial. Link to GitHub profile: https://github.com/thompsonholly
+Holly Thompson is currently a full-time student in the edX Full-Stack Coding Bootcamp at the University of Minnesota, she is the author of this Regex Tutorial. Link to GitHub profile: https://github.com/thompsonholly
 
