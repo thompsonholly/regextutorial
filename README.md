@@ -22,7 +22,6 @@ A closing tag must follow an opening tag in order to contain the code within it.
 - [Quantifiers](#quantifiers)
 - [Grouping Constructs](#grouping-constructs)
 - [Bracket Expressions](#bracket-expressions)
-- [Character Classes](#character-classes)
 - [The OR Operator](#the-or-operator)
 - [Flags](#flags)
 - [Character Escapes](#character-escapes)
@@ -42,31 +41,42 @@ The anchors help the system running the search parameter to identify `<` and `>`
 ### Quantifiers
 Quantifiers in regex are used to determind where the preceding string must be matched a pre-set number of times or more. A quantifier can be labeled as being greedy or lazy.
 
-The `+` quantifier states that the search must match one or more of the characters set in the algorithm, characters placed to the left of the + are expected to match at least once
-example: A+; the quantifier + is applied for a search for A
-example: apples+ the quantifier + is ONLY applied to the s in apples rather than the entire word
-*
+The `+` quantifier states that the search must match one or more of the characters set in the algorithm, characters placed to the left of the `+ are expected to match at least once:
+Example: `cars+` the `+` ONLY applies to the `s` in cars. 
 
-this quantifier maintains that the search must match 0 or more times
-?
+The `*` quantifier states that the search must match 0 or more times
 
-this quantifier maintains that the search must match 0 or 1 times; it is considered optional
-when implemented, it makes the preceding quantifier lazy, permitting it to match as few times as possible; whereas by default with our algorithm, quantifiers tend to gravitate towards matching as many characters as possible and are considered greedy as a result
-{7,9}
+The `?` quantifier states that the search must match 0 or 1 times but it is also optional.
+When it is implemented this `?` makes the quantifier before it considered lazy. This allows it to match as few times as possible. The default quantifiers tend to lean towards matching as many characters as possible and are considered greedy.
 
-the algorithm is set to force characters between seven and nine characters long
-abc|cba
 
-results in a match of abc OR cba only
+`{7,9}` This is set to allow only between seven and nine characters long.
+
+
+`abc|cba` This results in a match of `abc` OR `cba` only.
+
 ### Grouping Constructs
+`(hijk){4}` If it a selective pattern, they are set between parentheses and include a numeric counter besides it. This example would search for the match of `abcabcabc` because the first group was denoted as `(hij)` and we included the need for it to repeat three times as `{4}`.
+
+If there is non parentheses groups, the regex would look similarly `(?:hijk){4}` or `(?:HIJK`.
 
 ### Bracket Expressions
-
-### Character Classes
+A regex captured in square brackets is meant to match a single character or collating element.  An example is `[a-z]` as a bracket expression.
 
 ### The OR Operator
+The `|` operator acts like a Boolean OR. It matches the expression before or after the `|` and can be utilized inside a group or in  a whole expression. It causes the search-string to seek a match of either what is before or follows the `|`. 
+In the example: `<hijk>|<kjih>` it is looking for either `<hijk>` or `<kjih>`.
 
 ### Flags
+Expression flags are used after the initial closing forward slash expression.
+
+The `i` ignores case
+
+The `g` finds all matches instead of stopping after the first match.  The `i` modifier can combine with the `g` modifier to help with the global match, if there is a case-sensitive match. 
+
+The `m` is a flag used to match the start and end of a line instead of the start and end of a whole string. The anchors used at the beginning and end `^` and `$` of the search.
+
+The `s` searches for whitespace characters within a string.
 
 ### Character Escapes
 
