@@ -30,6 +30,14 @@ A closing tag must follow an opening tag in order to contain the code within it.
 ## Regex Components
 
 ### Anchors
+The characters ^ and $ are where to define the search parameters. Anything after ^ (caret) and before $ (dollar) are part of the search. 
+
+^abc123$
+
+The caret, ^, identifies the beginning of our string the position. The dollar, $, it identifies the end of our search string.
+
+The anchors help the system running the search parameter to identify < and > characters with anything listed between as an alpha-numeric or special character combination.
+
 
 ### Quantifiers
 
